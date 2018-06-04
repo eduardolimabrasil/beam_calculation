@@ -38,6 +38,7 @@ class CalculationSerializer(serializers.ModelSerializer):
 
     def get_resistance_module_table(self, resistance_module, list_output):
         choice_item = {"eixoxx":{"mm3":0}}
+        last_item = choice_item
         for item in list_output:
             result = item['eixoxx']['mm3'] * (10**3)
             if result > resistance_module:

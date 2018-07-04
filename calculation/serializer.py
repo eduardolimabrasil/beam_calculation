@@ -1,6 +1,5 @@
 from .models import Calculation
 from rest_framework import serializers
-from .models import Calculation
 from json import loads
 from beam_calculation.settings import PWD
 

@@ -13,8 +13,9 @@ class BeamCalculationView(viewsets.GenericViewSet):
     def create(self, request):
         data = request.data
         serializer = self.serializer_class(data=data)
-        if serializer.is_valid():            
-            return Response(serializer.resistance_module(data),status.HTTP_200_OK)
+        if serializer.is_valid():
+            json_data = serializer.resistance_module(data)
+            return Response(serializer.resistance_module(json_data),status.HTTP_200_OK)
         return Response(serializer.erros, status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
